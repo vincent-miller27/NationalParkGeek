@@ -22,6 +22,7 @@ As the user, you should be able to:
 - You can choose to see the temperature as Celcius and it was stay that way for your session unless you go back to Farneheit
 - You can click the survey button to see which parks are voted as the top, only parks with one vote or more will show up
 - You can click the submit a survey button at the top of the page to vote on your favorite park and it will be updated
+- SQL data is in the etc folder
 
 ## Additional Information
 
