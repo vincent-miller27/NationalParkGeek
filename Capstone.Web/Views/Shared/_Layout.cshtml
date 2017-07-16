@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>National Park Geek</title>
+    <link rel="stylesheet" href="~/Content/style.css" />
+    
+</head>
+<body>
+    <header>
+        <img src="~/Content/Images/logowithoutname.png"/>
+        <h1 class="header-title">National Park Geek</h1>
+    </header>
+    <nav id="page-nav">
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Survey", "Index", "Survey")</li>
+        </ul>
+    </nav>
+    <section class="body-section">
+        @RenderBody()
+    </section>
+    <footer>
+        National Park Geek <img src="~/Content/Images/backpack.png"/> Varying Locations <img src="~/Content/Images/backpack.png" /> contact@nationalparkgeek.com
+    </footer>
+</body>
+</html>

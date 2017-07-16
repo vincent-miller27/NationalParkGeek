@@ -1,0 +1,25 @@
+﻿@using Capstone.Web.Models;
+@model List<Park>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home";
+}
+
+@foreach (Park park in Model)
+{
+    <div class="home-main-container">
+        <div class="home-img-div">
+            <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode }, null)">
+                <img src="~/Content/Images/@(park.ParkCode).jpg" />
+            </a>
+        </div>
+
+        <div class="park-information">
+            <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode }, null)">
+                <h3>@park.ParkName</h3>
+            </a>
+            <p>@park.ParkDescription</p>
+        </div>
+    </div>
+}

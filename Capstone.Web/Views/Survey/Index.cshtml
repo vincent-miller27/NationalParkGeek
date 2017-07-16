@@ -1,0 +1,37 @@
+﻿@using Capstone.Web.Models;
+@model List<Survey>
+@{
+    ViewBag.Title = "Favorite Parks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="survey-page-container">
+
+    <h1>Favorite Parks</h1>
+
+    <div class="confirmation-message">
+        @if (TempData["StatusMessage"] != null)
+        {
+            string message = TempData["StatusMessage"] as string;      
+            <strong>@message</strong>        
+        }
+    </div>
+
+    <div id="submit-survey-button">
+        @Html.ActionLink("Submit a Survey!", "SurveySubmit", "Survey")
+    </div>
+
+    @foreach (Survey item in Model)
+    {
+        <div class="survey-item">
+            <div class="survey-picture">
+                <a href="@Url.Action("ParkDetail", "Home", new { id = item.ParkCode }, null)">
+                    <img src="~/Content/Images/@(item.ParkCode).jpg" />
+                </a>
+            </div>
+            <div class="survey-description">
+                <p><strong>@item.ParkName: </strong>@item.ParkDescription</p>
+                <p><strong>Surveys Received: </strong>@item.ParkCount</p>
+            </div>
+        </div>
+    }
+</section>

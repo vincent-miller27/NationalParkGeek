@@ -1,0 +1,72 @@
+﻿@using Capstone.Web.Models;
+@model Park
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Park Detail Home";
+}
+
+<div id="detail-park-container">
+    <div id="parkname-img-container">
+        <h1>@Model.ParkName</h1>
+        <img src="~/Content/Images/@(Model.ParkCode).jpg" />
+    </div>
+    <div id="park-info-container">
+        <p><strong>Location: </strong>@Model.State</p>
+        <p><strong>Climate: </strong>@Model.Climate</p>
+        <p><strong>Year Founded: </strong>@Model.YearFounded</p>
+        <p><strong>Entry Free: </strong>@Model.EntryFee.ToString("C")</p>    
+        <p><strong>Acreage: </strong>@Model.Acreage.ToString("N0")</p>
+        <p><strong>Miles of Trail: </strong>@Model.MilesOfTrail</p>
+        <p><strong>Number of Campsites: </strong>@Model.NumerOfCampsites</p>
+        <p><strong>Elevation: </strong>@Model.ElevationInFeet.ToString("N0") ft.</p>
+        <p><strong>Annual Visitor Count: </strong>@Model.AnnualVisitorCount.ToString("N0")</p>
+        <p><strong>Number of Species: </strong>@Model.NumberOfAnimalSpecies</p>
+    </div>
+    <p> </p>
+    <p> </p>
+    <div id="description-quote-container">
+        <p>@Model.ParkDescription</p>
+        <br />
+        <p>"@Model.InspirationalQuote" -@Model.InspirationalQuoteSource</p>
+    </div>
+</div>
+<div id="detail-weather-container">
+    @foreach (Weather item in Model.ParkForecast)
+    {
+
+        if (item.FiveDayForecastValue == 1)
+        {
+            <div id="today-forecast">
+                <h3>Today</h3>
+                <img src="~/Content/Images/@(item.Forecast).png" />
+                <p><span>High: @item.High</span> Low: @item.Low</p>
+                <div class="degree-switch">
+                    @using (Html.BeginForm("ParkDetail", "Home", FormMethod.Post))
+                    {
+                        @Html.RadioButtonFor(m => m.IsFarenheit, "true")
+                        @Html.Label("IsFarenheit", "Farenheit")
+
+                        @Html.RadioButtonFor(m => m.IsFarenheit, "false")
+                        @Html.Label("IsFarenheit", "Celcius")
+                        <button type="submit">OK</button>
+                    }
+                </div>
+                <div class="warning-messages">
+                    @foreach (string message in item.WarningMessages)
+                    {
+                        <p>@message</p>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="otherday-forecasts">
+                <img src="~/Content/Images/@(item.Forecast).png" />
+                <p>High: @item.High</p>
+                <p>Low: @item.Low</p>
+            </div>
+        }
+    }
+</div>

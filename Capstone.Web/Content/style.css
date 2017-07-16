@@ -1,0 +1,271 @@
+﻿html, body {
+    margin: 0;
+}
+
+body {
+    background-color: #e6ccb3;
+    font-family: Segoe UI, Helvetica;
+}
+
+header {
+    background-color: #996633;
+    position: relative;
+    bottom: -15px;
+    font-family: Segoe UI, Helvetica;
+    padding-top: 5px;
+    margin-top: -15px;
+}
+
+.header-title{
+    display: inline-block;
+    padding-left: 45px;   
+    font-size: 45px;
+    position: relative;
+    bottom: 30px;
+}
+    header img {
+        height: 120px;
+        padding-top: 10px;
+        position: relative;
+        left: 35px;
+    }
+
+#page-nav {
+    background-color: #996633;
+    height: 40px;
+    position: relative;
+    bottom: 31px;
+    padding-bottom: 10px;
+}
+
+    #page-nav ul {
+        width: 100%;
+        display: flex;
+        height: 30px;
+    }
+
+        #page-nav ul li {
+            background-color: #558000;
+            border-radius: 8px;
+            list-style: none;
+            text-align: center;
+            flex-grow: 1;
+            margin: 0 10px;
+            max-width: 200px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+            #page-nav ul li a {
+                text-decoration: none;
+                color: black;
+            }
+
+.home-main-container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    left: 50px;
+}
+
+.home-img-div {
+    width: 500px;
+    margin: 0;
+}
+
+    .home-img-div img {
+        height: 300px;
+        border: 2px;
+        border-radius: 8px;
+    }
+
+.park-information {
+    width: 600px;
+    height: 300px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    bottom: 347px;
+    left: 460px;
+}
+
+    .park-information a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+    }
+
+        .park-information a:hover {
+            color: lightslategray;
+        }
+
+    .park-information p {
+        font-size: 16px;
+    }
+
+#detail-park-container {
+    margin-left: 70px;
+}
+
+#parkname-img-container img {
+    width: 650px;
+    border: 2px;
+    border-radius: 8px;
+}
+
+#park-info-container {
+    line-height: 8px;
+}
+
+#description-quote-container {
+    width: 650px;
+}
+
+#detail-weather-container {
+    position: relative;
+    right: 50px;
+}
+
+#today-forecast {
+    display: inline-block;
+    width: 45%;
+    font-size: 18px;
+    text-align: center;
+    margin-left: -30px;
+}
+
+#today-forecast span {
+    margin-right: 15px;
+}
+
+    #today-forecast img {
+        width: 45%;
+        border: 2px;
+        border-radius: 8px;
+    }
+
+.otherday-forecasts img {
+    width: 100%;
+    border: 2px;
+    border-radius: 8px;
+}
+.otherday-forecasts {
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    width: 11%;
+    vertical-align: top;
+}
+.degree-switch {
+    display: inline-block;
+    margin-left: -5px;
+    padding-bottom: 10px;
+}
+.warning-messages {
+    margin-top: -15px;
+}
+.degree-switch button {
+    border-radius: 3px;
+}
+.survey-page-container{
+    padding-left: 50px;
+}
+.survey-page-container h1{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+}
+.survey-picture img {
+    border-radius: 8px;
+    width: 100%;
+}
+#submit-survey-button{
+    padding-bottom: 15px;
+}
+#submit-survey-button a{
+    text-decoration: none;
+    color: black;
+}
+.survey-picture{
+    display: inline-block;
+}
+.survey-description {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    padding-top: 25px;
+    padding-left: 15px;
+}
+.survey-count{
+    display: inline-block;
+}
+.survey-item{
+    padding-bottom: 15px;
+    margin-left: -5px;
+}
+.new-survey-container {
+    padding-left: 50px;
+}
+.form-input-group{
+   text-align: left;
+   padding-bottom: 10px;
+   font-size: 16px;
+
+}
+.new-survey-container h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: -5px;
+}
+.form-submit-button {
+    border-radius: 8px;
+    border-style: none;
+    padding: 8px 15px;
+    margin-top: 10px;
+    background-color: #558000;
+    font-weight: bold;
+    font-size: 15px;
+}
+.field-validation-error {
+    color: #558000;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.email-box{
+    display: inline;
+    padding-left: 106px;
+}
+.park-name-box{
+    display: inline;
+    padding-left: 25px;
+}
+.state-box{
+    display: inline;
+    padding-left: 50px;
+}
+.activity-buttons{
+    display: inline;
+    padding-left: 82px;
+}
+footer img {
+    height: 30px;
+    position: relative;
+    top: 8px;
+}
+footer {
+    background-color: #996633;
+    position: relative;
+    bottom: -91px;
+    font-family: Segoe UI, Helvetica;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+}
+.body-section{
+    padding-bottom: 100px;
+}

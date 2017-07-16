@@ -1,0 +1,46 @@
+﻿@using Capstone.Web.Models;
+@model Capstone.Web.Models.SurveyForm
+@{
+    ViewBag.Title = "Submit a Survey";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="new-survey-container">
+    <h2>New Survey</h2>
+
+    @using (Html.BeginForm("SurveySubmit", "Survey", FormMethod.Post))
+    {
+        <div class="form-input-group">
+            @Html.Label("ParkCode", "Favorite National Park")
+            <div class="park-name-box">
+                @Html.DropDownListFor(m => m.ParkCode, SurveyForm.ParkNames)
+            </div>
+            @Html.ValidationMessageFor(m => m.ParkCode)
+        </div>
+        <div class="form-input-group">
+            @Html.Label("EmailAddress", "Your Email")
+            <div class="email-box">
+                @Html.EditorFor(m => m.EmailAddress)
+            </div>
+            @Html.ValidationMessageFor(m => m.EmailAddress)
+        </div>
+        <div class="form-input-group">
+            @Html.Label("State", "State of Residence")
+            <div class="state-box">
+                @Html.DropDownListFor(m => m.State, SurveyForm.States)
+            </div>
+            @Html.ValidationMessageFor(m => m.State)
+        </div>
+        <div class="form-input-group">
+            @Html.Label("ActivityLevel", "Activity Level")
+            <div class="activity-buttons">
+                @Html.RadioButtonFor(m => m.ActivityLevel, "Inactive") Inactive
+                @Html.RadioButtonFor(m => m.ActivityLevel, "Sedentary") Sedentary
+                @Html.RadioButtonFor(m => m.ActivityLevel, "Active") Active
+                @Html.RadioButtonFor(m => m.ActivityLevel, "Extremely Active") Extremely Active
+                @Html.ValidationMessageFor(m => m.ActivityLevel)
+            </div>
+        </div>
+
+        <button class="form-submit-button">Submit!</button>
+    }
+</section>
